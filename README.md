@@ -5,7 +5,7 @@ This includes R code and data in the manuscript: Yang JW, et. al.(2023)"Trade-of
 
 The analysese in the manuscript are operated with R script "CR-Trade-off_R_Scripts_20230202.R".
 
-"CR-Trade-off_R_Scripts_Functions_20230202.R" is the R script with functions that will be used in "CR-Trade-off_R_Scriptse_202302021.R"
+"CR-Trade-off_R_Scripts_Functions_20230202.R" is the R script with functions that will be used in "CR-Trade-off_R_Scriptse_20230202.R"
 
 "Final_table_dada2.tsv" is the raw ASV table (before standardization) output from QiimeII.
 
