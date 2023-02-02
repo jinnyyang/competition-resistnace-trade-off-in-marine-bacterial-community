@@ -7,8 +7,8 @@ The analysese in the manuscript are operated with R script "CR-Trade-off_R_Scrip
 
 "CR-Trade-off_R_Scripts_Functions_20230202.R" is the R script with functions that will be used in "CR-Trade-off_R_Scriptse_202302021.R"
 
-"table_ASV.txt" is the raw ASV table (before standardization) output from QiimeII.
+"Final_table_dada2.tsv" is the raw ASV table (before standardization) output from QiimeII.
 
 "SampeName.xlsx" lists the sample ID used in this manuscript.
 
-"FlowCytometry_Enumeration_Data.xlsx" is the bacterial cell flowcytometry enumeration data.
+"FlowCytometry_Enumeration_Data_202207.xlsx" is the bacterial cell flowcytometry enumeration data.
