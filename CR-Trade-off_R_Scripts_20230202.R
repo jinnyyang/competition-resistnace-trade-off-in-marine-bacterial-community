@@ -232,29 +232,44 @@ for (i in 1:length(table_list)){
 ########### Part 3: LMM analysis ################################################
   
   #### A. Resistance ~ competition ####
-  temp = list.files(pattern="HypothesisI_variables.*.txt") 
-  l=list()
-  for (i in 1:length(temp)){
-    table=read.table(temp[i], header=T,row.names=1)
-    Sample=sapply(strsplit(temp,"_"), "[", 3)[i]
-    Station=sapply(strsplit(Sample,"St"), "[", 2)
-    l[[i]]=data.frame(table,rep(Sample,nrow(table)),rep(Station,nrow(table)))
-    colnames(l[[i]])=c(colnames(table),"Sample","Station")
-    names(l)[i]=Sample
-  }
-  rl=rbind(l[[1]],l[[2]],l[[3]],l[[4]],l[[5]],l[[6]],l[[7]])
+  HI_list_D02 = list.files(pattern="EachASV_Regression_.*.D02.csv") 
+  HI_list_D30 = list.files(pattern="EachASV_Regression_.*.D30.csv") 
+  
+  CruiseStation=sapply(strsplit(HI_list_D02, "\\_|\\.| "), "[", 4)
+  Treatment=sapply(strsplit(HI_list_D02, "\\_|\\.| "), "[", 5)
+  
+  l_D02=list()
+  for (i in 1:6){
+    t_D02=read.csv(HI_list_D02[i],header=T,row.names = 1)
+    t_D30=read.csv(HI_list_D30[i],header=T,row.names = 1)
+    Data=data.frame(t_D02$Slope,t_D30$intercept,rep(CruiseStation[i],length(t_D02$Slope)))
+    Data=Data[Data[,1]!=0,]
+    Data=Data[Data[,2]!=0,]
+    l_D02[[i]]=Data
+  }  
+  l_D30=list()
+  for (i in 1:6){
+    t_D30=read.csv(HI_list_D30[i],header=T,row.names = 1)
+    Data=data.frame(t_D30$Slope,t_D30$intercept,rep(CruiseStation[i],length(t_D30$Slope)))
+    Data=Data[Data[,1]!=0,]
+    Data=Data[Data[,2]!=0,]
+    l_D30[[i]]=Data
+  }  
+  
+  l_D02_all=rbind(l_D02[[1]],l_D02[[2]],l_D02[[3]],l_D02[[4]],l_D02[[5]],l_D02[[6]])
+  l_D30_all=rbind(l_D30[[1]],l_D30[[2]],l_D30[[3]],l_D30[[4]],l_D30[[5]],l_D30[[6]])
   
   #Do LMM with function "LM_Estimates"
-  LMM_Estimates=rbind(LMMEst(rl$IGR,rl$Slope_D02,rl$Sample),
-                      LMMEst(rl$IGR,rl$Slope_D30-rl$Slope_D02,rl$Sample),
-                      LMMEst(log10(rl$T0_AbsA),rl$Slope_D02,rl$Sample),
-                      LMMEst(log10(rl$T0_AbsA),rl$Slope_D30-rl$Slope_D02,rl$Sample))
+  LMM_Tradeoff=rbind(LMMEst(l_D02_all$t_D30.intercept,
+                            l_D02_all$t_D02.Slope,
+                            l_D02_all$rep.CruiseStation.i...length.t_D02.Slope..),
+                     LMMEst(l_D30_all$t_D30.intercept,
+                            l_D30_all$t_D30.Slope,
+                            l_D30_all$rep.CruiseStation.i...length.t_D30.Slope..))
   
-  colnames(LMM_Estimates)=c("Value" ,"Std. Error","DF","t-value","p-value","Fix_intercept","Fix_slope")     
-  rownames(LMM_Estimates)=c("Growth_Protists","Growth_Viruses",
-                            "Density_Protists","Density_Viruses")
-  write.csv(LMM_Estimates,"LMM_R-C.csv", quote=F) # Output LMM result for Hypothesis I
-  
+  colnames(LMM_Tradeoff)=c("Value" ,"Std. Error","DF","t-value","p-value","Fix_intercept","Fix_slope")     
+  rownames(LMM_Tradeoff)=c("D02","D30")
+  write.csv(LMM_Tradeoff,"LMM_Trade-off.csv", quote=F) # Output LMM result for Hypothesis I
   
   #### B. Diversity ~ Top-down control dilution factors #### 
   Dilution_WithT0=sapply(strsplit(names(Richness),"D"),"[",3)
@@ -615,48 +630,7 @@ for (i in 1:length(table_list)){
               label.x=c(0,-0.04), label.y=c(0.2,0.25),
               ncol = 1, nrow = 2, legend="right", common.legend = T) 
     
-    
-###### Taxonomy plot ######Not sure if use
-    Order=sapply(strsplit(Taxonomy[,2], "__|;"), "[", 8)
-    Class=sapply(strsplit(Taxonomy[,2], "__|;"), "[", 6)
-    Phylum=sapply(strsplit(Taxonomy[,2], "__|;"), "[", 4)
-    
-    New_tax=data.frame(Order,Class,Phylum)
-    rownames(New_tax)=Taxonomy[,1]
-    pp=list()
-    for (j in 1:6){
-      Com_Col=grep(SampleID[1,j], Sample_all, value = TRUE)
-      rare.table=ps.rarefied[,Com_Col]    
-      p=phyloseq(otu_table(as.matrix(rare.table),taxa_are_rows=F),
-                 tax_table(as.matrix(New_tax)))
-      pp[[j]]=plot_bar(p,fill="Phylum")+ 
-        scale_x_discrete(limits=colnames(rare.table),labels=Label)+
-        theme_bw()+
-        labs(title=SampleID[1,j], y="# of reads", x="Sample") +
-        theme(title=element_text(size=8),
-              axis.title.y=element_text(size=8),
-              axis.title.x=element_text(size=8),
-              axis.text.y = element_text(size = 5),
-              axis.text.x = element_text(size = 5),
-              legend.text = element_text(size = 6),
-              legend.title = element_blank(),
-              legend.position="right")
-    }
-    
-    Label=c("D30_0%","D30_25%","D30_50%","D30_75%","D30_100%",
-            "D30_0%","D30_25%","D30_50%","D30_75%","D30_100%",
-            "D_0%","D_25%","D_50%","D_75%","D_100%",
-            "D_0%","D_25%","D_50%","D_75%","D_100%","T0")
-    
-    ggarrange(pp[[1]],pp[[2]], legend="right", common.legend = TRUE)
-    
 
-    
-    
-    
-  
-  
-  
     
 ##########################################################################################   
     
