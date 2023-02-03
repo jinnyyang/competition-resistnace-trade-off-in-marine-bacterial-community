@@ -1,7 +1,7 @@
 #Trade-off between competition ability and invulnerability to predation in marine microbes – contrasting of protist grazing and viral lysis effects
 #Jinny Wu Yang, Feng-Hsun Chang, Yi-Chun Yeh, An-Yi Tsai, Fuh-Kwo Shiah, Kuo-Ping Chiang, Gwo-Ching Gong, Chih-hao Hsieh
 #jinnyang@umich.edu
-source("I-C_Rcode_Functions_20230202.R")
+source("CR-Trade-off_R_Scripts_Function_20230202.R")
 library(gdata)
 library(phyloseq)
 library(ggpubr)
