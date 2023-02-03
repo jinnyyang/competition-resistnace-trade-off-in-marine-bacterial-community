@@ -7,7 +7,7 @@ The analysese in the manuscript are operated with R script "CR-Trade-off_R_Scrip
 
 "CR-Trade-off_R_Scripts_Functions_20230202.R" is the R script with functions that will be used in "CR-Trade-off_R_Scriptse_20230202.R"
 
-"Final_table_dada2.tsv" is the raw ASV table (before standardization) output from QiimeII.
+"Final_table_dada2.tsv" is the raw ASV table (before standardization) output from Qiime2.
 
 "SampeName.xlsx" lists the sample ID used in this manuscript.
 
