@@ -1,7 +1,7 @@
 # Trade-offs between competition ability and resistance to top-down control in marine microbes
 Datasets and R scripts of manuscript "Trade-off between competition ability and resistance to top-down control in marine microbes"
 
-This includes R code and data in the manuscript: Yang JW, et. al.(2023)"Trade-off between competition ability and resistance to top-down control in marine microbes"
+This includes R code and data in the manuscript: Yang JW, et. al.(2023)"Trade-offs between competition ability and resistance to top-down control in marine microbes"
 
 The analysese in the manuscript are operated with R script "CR-Trade-off_R_Scripts_20230202.R".
 
