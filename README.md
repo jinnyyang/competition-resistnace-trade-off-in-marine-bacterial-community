@@ -1,7 +1,7 @@
 # Trade-offs between competition ability and resistance to top-down control in marine microbes
 
-## Authurs: Yang, Jinny Wu, Feng-Hsun Chang, Yi-Chun Yeh, An-Yi Tsai, Kuo-Ping Chiang, Fuh-Kwo Shiah, Gwo-Ching Gong, and Chih-hao Hsieh.
-### Accepted by *mSystems* on March 14th, 2023
+### Authurs: Yang, Jinny Wu, Feng-Hsun Chang, Yi-Chun Yeh, An-Yi Tsai, Kuo-Ping Chiang, Fuh-Kwo Shiah, Gwo-Ching Gong, and Chih-hao Hsieh.
+**Accepted by *mSystems* on March 14th, 2023*
  - Link to the article: https://journals.asm.org/doi/10.1128/msystems.01017-22
 
 
