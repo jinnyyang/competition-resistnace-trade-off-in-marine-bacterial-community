@@ -8,8 +8,6 @@
 This is the repository for the manuscript "Trade-offs between competition ability and resistance to top-down control in marine microbes" written by Yang, Jinny Wu, Feng-Hsun Chang, Yi-Chun Yeh, An-Yi Tsai, Kuo-Ping Chiang, Fuh-Kwo Shiah, Gwo-Ching Gong, and Chih-hao Hsieh. The raw data can be obtained from the Sequence Read Archive at NCBI under accession PRJNA749329.
 
 **Information about this repository:**
-- Original fastq files:
-
 - Code Files:
   - `CR-Trade-off_R_Scripts_20230202.R` includes all the data analysis.
   - `CR-Trade-off_R_Scripts_Functions_20230202.R` has all of the functions written.
@@ -20,4 +18,4 @@ This is the repository for the manuscript "Trade-offs between competition abilit
   - "FlowCytometry_Enumeration_Data_202207.xlsx" includes the raw bacterial count data.
 
 
-Note: This project is under the GNU general public License.
+*Note*: This project is under the GNU general public License.
