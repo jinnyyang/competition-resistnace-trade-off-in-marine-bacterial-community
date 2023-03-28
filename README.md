@@ -18,4 +18,4 @@ This is the repository for the manuscript "Trade-offs between competition abilit
   - "FlowCytometry_Enumeration_Data_202207.xlsx" includes the raw bacterial count data.
 
 
-*Note*: This project is under the GNU general public License.
+**Note**: This project is under the GNU general public License.
