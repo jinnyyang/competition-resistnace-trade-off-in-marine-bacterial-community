@@ -1,20 +1,20 @@
 # Trade-offs between competition ability and resistance to top-down control in marine microbes
 
 ## Authurs: 
-## Accepted by Environmental Microbiology on March 14th, 2023
-### - Link to the article: https://journals.asm.org/doi/10.1128/msystems.01017-22
+### Accepted by Environmental Microbiology on March 14th, 2023
+ - Link to the article: https://journals.asm.org/doi/10.1128/msystems.01017-22
 
 
-####This is the repository for the manuscript "" written by . The raw data can be obtained from the Sequence Read Archive at NCBI under accession SRP0, which are associated with BioProject PRJN
+This is the repository for the manuscript "Trade-offs between competition ability and resistance to top-down control in marine microbes" written by Yang, Jinny Wu, Feng-Hsun Chang, Yi-Chun Yeh, An-Yi Tsai, Kuo-Ping Chiang, Fuh-Kwo Shiah, Gwo-Ching Gong, and Chih-hao Hsieh. The raw data can be obtained from the Sequence Read Archive at NCBI under accession SRP0, which are associated with BioProject PRJN
 
-####Information about this repository:
-Original fastq files:
+Information about this repository:
+- Original fastq files:
 
-Code Files:
+- Code Files:
   "CR-Trade-off_R_Scripts_20230202.R"
   "CR-Trade-off_R_Scripts_Functions_20230202.R"
 
-Directories/Directory Set up:
+- Directories/Directory Set up:
 "Final_table_dada2.tsv"
 "SampeName.xlsx"
 "FlowCytometry_Enumeration_Data_202207.xlsx"
