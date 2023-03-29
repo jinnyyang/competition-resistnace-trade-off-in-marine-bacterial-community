@@ -20,5 +20,3 @@ This is the repository for the manuscript "Trade-offs between competition abilit
   - "SampeName.xlsx" includes sample name for data analysis.
   - "FlowCytometry_Enumeration_Data_202207.xlsx" includes the raw bacterial count data.
 
-
-**Note**: This project is under the GNU general public License.
