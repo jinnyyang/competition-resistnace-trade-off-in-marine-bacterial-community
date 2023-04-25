@@ -12,7 +12,7 @@ This is the repository for the manuscript "Trade-offs between competition abilit
 
 **Information about this repository:**
 - Code Files:
-  - `CR-Trade-off_R_Scripts_20230202.R` includes all the data analysis.
+  - `CR-Trade-off_R_Scripts_20230204.R` includes all the data analysis.
   - `CR-Trade-off_R_Scripts_Functions_20230202.R` has all of the functions written.
 
 - Directories/Directory Set up:
