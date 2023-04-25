@@ -19,5 +19,5 @@ This is the repository for the manuscript "Trade-offs between competition abilit
   - "Final_table_dada2.tsv" is the raw ASV table.
   - "SampeName.xlsx" includes sample name for data analysis.
   - "FlowCytometry_Enumeration_Data_202207.xlsx" includes the raw bacterial count data.
-  - "Taxonomy.tsv" includes taxonomy classification of each ASV.
+  - "taxonomy.tsv" includes taxonomy classification of each ASV.
 
